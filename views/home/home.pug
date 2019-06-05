@@ -1,0 +1,26 @@
+extends ../common/index
+
+block head
+
+block content
+    .header-dashboard
+        .header-image
+            img(src='/images/logo.png', alt='')
+        .infos-header-title
+            h1 Meu App
+    block inner
+        .app-content
+            .app-container-dashboard
+                div
+                    p.subtitle Selecione o que deseja acessar.  
+                    ul.items-list
+                        li.items-documents
+                            a.item-menu(href='/product/list')
+                                span
+                                    img(src='/images/products.png', alt='')
+                                p Produtos
+                        li.items-documents
+                            a.item-menu(href='https://www.linkedin.com/in/richard-henrique-451a8979/')
+                                span
+                                    img(src='/images/linkedin.png', alt='')
+                                p Meu Linkedin

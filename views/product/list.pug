@@ -1,0 +1,24 @@
+extends ../common/index
+
+block head
+
+block content
+    .header-dashboard
+        a(href='/home')
+            .header-image
+                img(src='/images/logo.png', alt='')
+        .infos-header-title
+            h1 Produtos 
+    block inner
+        .app-content
+            a.setProduct(href='/product/add') Cadastrar Produto
+            ul.list-dashboard-filters
+                li.item-filter-dashboard.filter-list-name: a Nome:
+            each product in products
+                li.item-list
+                    form(method="POST" action="/product/remove/" + product.sku + "?_method=DELETE" id='removeProduct')
+                        a(onClick="document.getElementById('removeProduct').submit()")
+                            p(title='Remover Produto').deleteProduct.fa &#xf014
+                    a(href=`/product/${product.sku}`)
+                        span.list-name
+                            p= product.name

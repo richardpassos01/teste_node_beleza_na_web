@@ -1,0 +1,38 @@
+extends ../common/index
+
+block head
+
+block content
+    .header-dashboard
+        a(href='/product')
+            .header-image
+                img(src='/images/logo.png', alt='')
+        .infos-header-title
+            h1 Detalhes 
+    block inner
+        .app-content
+            div
+                form(action="/product/add" method='POST')
+                    div.row
+                        div.col-25
+                            label(for="name") Produto
+                        div.col-75
+                            input(type="text" id="name" name="name" required)
+                    div.row
+                        div.col-25
+                            label(for="locality") Local
+                        div.col-75
+                            input(type="text" id="locality" name="locality" required)
+                    div.row
+                        div.col-25
+                            label(for="quantity") Quantidade em estoque
+                        div.col-75
+                            input(type="number" id="quantity" name="quantity" required)
+                    div.row
+                        div.col-25
+                            label(for="type") Tipo
+                        div.col-75
+                            input(type="text" id="type" name="type" required)
+                    div.row
+                        div.col-76
+                            input(type="submit" value="Adicionar")

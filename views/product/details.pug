@@ -1,0 +1,54 @@
+extends ../common/index
+
+block head
+
+block content
+    .header-dashboard
+        a(href='/product/list')
+            .header-image
+                img(src='/images/logo.png', alt='')
+        .infos-header-title
+            h1 Detalhes 
+    block inner
+        .app-content
+            a.setProduct(href='#' onClick='editProduct()') Editar Produto
+            div
+                form(method="POST" action="/product/update/" + products.sku + "?_method=PUT" id='editProduct')
+                    div.row
+                        div.col-25
+                            label(for="name") Produto
+                        div.col-75
+                            input.isDisabled(type="text" id="name" value=products.name name="name" disabled)
+                    div.row
+                        div.col-25
+                            label(for="locality") Local
+                        div.col-75
+                        
+                            input.isDisabled(type="text" id="locality" value=products.inventory.warehouses[0].locality name="locality" required disabled)
+                    div.row
+                        div.col-25
+                            label(for="quantity") Quantidade em estoque
+                        div.col-75
+                            input.isDisabled(type="text" id="quantity" value=products.inventory.warehouses[0].quantity name="quantity" disabled)
+                    div.row
+                        div.col-25
+                            label(for="type") Tipo
+                        div.col-75
+                            input.isDisabled(type="text" id="type" value=products.inventory.warehouses[0].type name="type" disabled)
+                    div.row
+                        div.col-25
+                            label(for="marketable") Comercializavel
+                        div.col-75
+                            input(type="text" id="marketable" name="marketable" value=products.isMarketable? 'Sim': 'Não' disabled)
+                    div.row
+                        div.col-25
+                            label(for="quantityModify") Quantidade de vezes modificado
+                        div.col-75
+                            label=products.inventory.quantity
+                            input(type="hidden" value=products.inventory.quantity name="quantityModify")
+                    
+                    div.row
+                        div.col-76
+                            input.isDisabled(type="submit" value="Editar" disabled)
+    block scripts
+        script(src='/js/common.js')
