@@ -34,8 +34,8 @@ class Database {
       sku,
       ...product
     }
-
-    return await this.writeObject([...data, newProduct])
+    await this.writeObject([...data, newProduct])
+    return newProduct
   }
 
   async list(sku) {

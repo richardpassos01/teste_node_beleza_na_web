@@ -1,10 +1,6 @@
 'use strict'
 
 const Database = require('./../database/database')
-const {
-  check,
-  validationResult
-} = require('express-validator/check')
 
 async function getListProducts(sku) {
   return await Database.list(sku)

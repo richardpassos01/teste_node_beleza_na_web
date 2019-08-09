@@ -1,7 +1,6 @@
 'use strict'
 
 const router = require('express').Router()
-const validator = require('validator')
 const productActions = require('./../scripts/helpers/productActions.js')
 
 router.get('/list',
@@ -13,6 +12,7 @@ router.get('/list',
       })
     } catch (err) {
       console.error('Don\'t Panic! ', err)
+      return res.redirect('./home')
     }
   })
 
@@ -30,6 +30,7 @@ router.get('/:sku',
       })
     } catch (err) {
       console.error('Don\'t Panic! ', err)
+      return res.redirect('./home')
     }
   })
 
@@ -40,6 +41,7 @@ router.post('/add',
       return res.redirect('./list')
     } catch (err) {
       console.error('Don\'t Panic! ', err)
+      return res.redirect('./home')
     }
   })
 
@@ -50,6 +52,7 @@ router.put('/update/:sku',
       return res.redirect('/product/' + req.params.sku)
     } catch (err) {
       console.error('Don\'t Panic! ', err)
+      return res.redirect('./home')
     }
   })
 
@@ -60,6 +63,7 @@ router.delete('/remove/:sku',
       return res.redirect('/product/list')
     } catch (err) {
       console.error('Don\'t Panic! ', err)
+      return res.redirect('./home')
     }
   })
 
