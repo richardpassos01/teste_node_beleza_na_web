@@ -4,6 +4,7 @@
 
 Atualizar os pacotes, `$ npm install`, e rodar o projeto digitando `$ npm start ou node server.js` dentro do diretorio onde o repositorio foi clonado.
 
+Para rodar os testes das principais ações do produto, basta digitar `$ npm test`, lembrando que como este é um serviço simulado, o arquivo json externo deve estar com um produto preenchido antes dos testes.
 
 ## Objetivos
 
@@ -32,7 +33,6 @@ Atualizar os pacotes, `$ npm install`, e rodar o projeto digitando `$ npm start 
 - [x]  Ao atualizar um produto, o antigo deve ser sobrescrito com o que esta sendo enviado na requisição
 
 
-## Próximos passos
+## TODO
 
-* Testes unitários
-* Realizar o crud em banco s
+* Realizar o crud em banco (mongo atlas)
